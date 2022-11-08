@@ -303,7 +303,9 @@ def ecmwf(request):
 
     return render(request, '{0}/ecmwf.html'.format(base_name), context)
 
-@controller(name='get-warning-points',url=f'{base_url}/ecmwf-rapid/get-warning-points', app_workspace=True,)
+# @controller(name='get-warning-points',url=f'{base_url}/ecmwf-rapid/get-warning-points', app_workspace=True)
+@controller(url={'get-warning-points': f'{base_url}/ecmwf-rapid/get-warning-points', 'get-warning-points2':f'{base_url}/get-warning-points'}, app_workspace=True)
+
 def get_warning_points(request, app_workspace):
     get_data = request.GET
     colombia_id_path = os.path.join(app_workspace.path, 'ecuador_reachids.csv')
