@@ -1,5 +1,9 @@
-{% extends "hydroviewer_ecuador/base.html" %} {% load static %} {% block
-import_gizmos %} {% endblock %} {% block header_buttons %}
+{% extends "hydroviewer_ecuador/base.html" %} 
+{% load static %} 
+{% block import_gizmos %} 
+{% endblock %} 
+
+{% block header_buttons %}
 <div
   class="header-button glyphicon-button"
   data-toggle="tooltip"
@@ -9,10 +13,12 @@ import_gizmos %} {% endblock %} {% block header_buttons %}
   <a data-toggle="modal" data-target="#about"
     ><i class="bi bi-info-square"></i></a>
 </div>
-{% endblock %} {% block app_navigation_items %} {% url
-"hydroviewer_ecuador:home" as home %} {% url "hydroviewer_ecuador:user_manual"
-as user_manual %} {% url "hydroviewer_ecuador:technical_manual" as
-technical_manual %}
+{% endblock %}
+{% block app_navigation_items %} 
+
+{% url "hydroviewer_ecuador:home" as home %} 
+{% url "hydroviewer_ecuador:user_manual" as user_manual %} 
+{% url "hydroviewer_ecuador:technical_manual" as technical_manual %}
 <li class="{% if request.path == home %}active{% endif %}">
   <a href="{{ home }}">Aplicación</a>
 </li>
@@ -286,5 +292,8 @@ technical_manual %}
   >
 </p>
 
-{% endblock %} {% block after_app_content %} {% endblock %} {% block app_actions
-%} {% endblock %}
+{% endblock %} 
+{% block after_app_content %} 
+{% endblock %} 
+{% block app_actions %} 
+{% endblock %}
