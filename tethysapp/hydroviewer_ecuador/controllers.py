@@ -668,7 +668,8 @@ def get_flow_duration_curve(request):
         print(str(e))
         return JsonResponse({'error': 'No historic data found for calculating flow duration curve.'})
 
-@controller(name='get_historic_data_csv',url=f'{base_url}/ecmwf-rapid/get_historic_data_csv')
+# @controller(name='get_historic_data_csv',url=f'{base_url}/ecmwf-rapid/get_historic_data_csv')
+@controller(url={'get_historic_data_csv': f'{base_url}/ecmwf-rapid/get-historic-data-csv', 'get_historic_data_csv2': f'{base_url}/get-historic-data-csv'})
 def get_historic_data_csv(request):
     """""
     Returns ERA 5 data as csv
@@ -700,7 +701,8 @@ def get_historic_data_csv(request):
         print(str(e))
         return JsonResponse({'error': 'No historic data found.'})
 
-@controller(name='get_forecast_data_csv',url=f'{base_url}/ecmwf-rapid/get-forecast-data-csv')
+# @controller(name='get_forecast_data_csv',url=f'{base_url}/ecmwf-rapid/get-forecast-data-csv')
+@controller(url={'get_forecast_data_csv': f'{base_url}/ecmwf-rapid/get-forecast-data-csv', 'get_forecast_data_csv2': f'{base_url}/get-forecast-data-csv'})
 def get_forecast_data_csv(request):
     """""
     Returns Forecast data as csv
