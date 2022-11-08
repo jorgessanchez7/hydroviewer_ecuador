@@ -19,7 +19,8 @@
 {% url "hydroviewer_ecuador:home" as home %} 
 {% url "hydroviewer_ecuador:user_manual" as user_manual %} 
 {% url "hydroviewer_ecuador:technical_manual" as technical_manual %}
-<li class="{% if request.path == home %}active{% endif %}">
+
+<!-- <li class="{% if request.path == home %}active{% endif %}">
   <a href="{{ home }}">Aplicación</a>
 </li>
 <li class="{% if request.path == user_manual %}active{% endif %}">
@@ -27,7 +28,12 @@
 </li>
 <li class="{% if request.path == technical_manual %}active{% endif %}">
   <a href="{{ technical_manual }}">Manual Técnico</a>
-</li>
+</li> -->
+
+
+<li class="nav-item"><a href=" {{ home }}" class="{% if request.path == home %}nav-link active{% endif %}">Aplicación</a></li>
+<li class="nav-item"><a href="{{ user_manual }}" class="{% if request.path == user_manual %}nav-link active{% endif %}">Manual de Usuario</a></li>
+<li class="nav-item"><a href="{{ technical_manual }}" class="{% if request.path == technical_manual %}nav-link active{% endif %}">Manual Técnico</a></li>
 
 {% endblock %} {% block app_content %}
 <center>
