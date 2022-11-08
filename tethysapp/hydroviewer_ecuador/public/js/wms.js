@@ -946,7 +946,7 @@ function map_events() {
         var pixel = map.getEventPixel(evt.originalEvent);
         if (model === 'ECMWF-RAPID') {
             var hit = map.forEachLayerAtPixel(pixel, function(layer) {
-                if (layer == feature_layer || layer == feature_layer2) {
+                if (layer == feature_layer || layer == feature_layer) {
                     current_layer = layer;
                     return true;
                 }
