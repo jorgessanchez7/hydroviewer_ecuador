@@ -1035,8 +1035,10 @@ function map_events() {
                             var stream = result["features"][0]["properties"]["Name"];
                             var province = result["features"][0]["properties"]["Provincia"];
 
+                            $('#Station-Name-Tab').html(watershed_display_name)
+
                             $("#watershed-info").empty();
-                            $("#watershed-info").append('<h3>Region: ' + watershed_display_name + '</h3><h5>Country: ' + subbasin_display_name + '</h5>');
+                            $("#watershed-info").append('<h5>Country: ' + subbasin_display_name + '</h5>');
                             $("#watershed-info").append('<h5>Reach ID: ' + comid  + '</h5><h5>Stream: ' + stream  + '</h5><h5>Province: '+ province  + '</h5>');
 
                             get_available_dates(model, watershed, subbasin, comid);

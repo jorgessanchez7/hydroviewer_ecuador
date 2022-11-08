@@ -190,10 +190,36 @@
 
 <!-- Chart Modal -->
 <div class="modal fade" id="graph" tabindex="-1" role="dialog" aria-labelledby="about-modal-label">
-  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" style="color:#fcbf10; background-color:#20295c;border-color:#20295c;" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-header" id="modal-headerex">
+        <div class="row">
+          <div class="col-md-10">
+            <h4 id="Station-Name-Tab"> 
+
+            </h4>
+          </div>
+
+          <div class="col-md-2">
+            <div class = "logos_cuadrado" align="right">
+              
+              <img id="servir_logo"  class="obslogos" src="{% static base_name|add:'/images/servir_logo.jpeg' %}">
+              <img id="inamhi_logo" class="obslogos" src="{% static base_name|add:'/images/my-icon-inamhi.png' %}">
+              <img class="logos" src="{% static base_name|add:'/images/byu_logo.png' %}">
+              <img class="obslogos" src="{% static base_name|add:'/images/EcoCiencia.png' %}">
+            </div>
+              
+          </div>
+          <div id="interaction"></div>
+        </div>
+        <div class="row">
+          <div id="watershed-info" class="col-md-10 row"></div>
+
+        </div>
+        
+        
+        
+        <!-- <button type="button" class="close" style="color:#fcbf10; background-color:#20295c;border-color:#20295c;" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <div class="row">
           <div id="watershed-info" class="col-md-8"></div>
           <div class="col-md-4">
@@ -205,15 +231,15 @@
             </div>
           </div>
         </div>
-        <div id="interaction"></div>
+        <div id="interaction"></div> -->
       </div>
       <div class="modal-body">
         <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a id="forecast_tab_link" href="#forecast_tab" aria-controls="forecast_tab" role="tab" data-bs-toggle="tab">Forecast</a></li>
-          <li role="presentation"><a id="historical_tab_link" href="#historical" aria-controls="historical" role="tab" data-bs-toggle="tab">Historical Simulation</a></li>
-          <li role="presentation"><a id="flow_duration_tab_link" href="#flow_duration" aria-controls="flow_duration" role="tab" data-bs-toggle="tab">Historical Simulation Statistics</a></li>
-          <li role="presentation"><a href="#download" aria-controls="download" role="tab" data-bs-toggle="tab">Download</a></li>
+        <ul class="nav nav-tabs">
+          <li  class="nav-item" ><a id="forecast_tab_link" href="#forecast_tab" class="nav-link active" aria-controls="forecast_tab"  data-bs-toggle="tab">Forecast</a></li>
+          <li  class="nav-item"><a id="historical_tab_link" href="#historical" aria-controls="historical" class="nav-link" data-bs-toggle="tab">Historical Simulation</a></li>
+          <li  class="nav-item"><a id="flow_duration_tab_link" href="#flow_duration" aria-controls="flow_duration" class="nav-link" data-bs-toggle="tab">Historical Simulation Statistics</a></li>
+          <li  class="nav-item"><a href="#download" aria-controls="download" class="nav-link" data-bs-toggle="tab">Download</a></li>
         </ul>
 
         <!-- Tab panes -->
