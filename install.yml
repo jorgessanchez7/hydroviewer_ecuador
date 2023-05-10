@@ -1,6 +1,8 @@
-# This file may be committed to your app code.
-version: 1.3
-# This should match the app - package name in your setup3.py
+# This file should be committed to your app code.
+version: 2.0
+# This should be greater or equal to your tethys-platform in your environment
+tethys_version: ">=4.0.0"
+# This should match the app - package name in your setup.py
 name: hydroviewer_ecuador
 
 requirements:
@@ -8,17 +10,10 @@ requirements:
   skip: false
   conda:
     channels:
-      - conda-forge
     packages:
-      - geoglows
-      - hydrostats
-      - pandas
-      - requests
-      - plotly
-      - numpy
-      - scipy
-      - bs4
-      - html5lib
+
   pip:
+
+  npm:
 
 post:

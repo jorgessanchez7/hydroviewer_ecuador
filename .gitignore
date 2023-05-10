@@ -7,6 +7,10 @@
 *.db
 *.sqlite
 *.DS_Store
-.idea
-.idea/*
-/build
+.idea/
+services.yml
+.vscode
+.env
+*.cer
+config-server.sh
+Ecuador_Data_*
