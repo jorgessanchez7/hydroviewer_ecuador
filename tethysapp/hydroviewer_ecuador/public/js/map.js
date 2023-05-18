@@ -109,10 +109,10 @@ async function get_data_station(comid, name, lat, lon, loc1, loc2){
 
     loader = `<div class="loading-container" style="height: 350px; padding-top: 12px;"> 
                 <div class="loading"> 
-                  <h2>LOADIND DATA</h2>
+                  <h2>LOADING DATA</h2>
                   <span></span><span></span><span></span><span></span><span></span><span></span><span></span> 
                 </div>
-              </div>`;
+              </div>`; 
 
     // Add the dynamic loader
     $("#hydrograph").html(loader)

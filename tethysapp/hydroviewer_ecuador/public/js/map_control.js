@@ -4,6 +4,7 @@
 
 // Localities
 let loc = [
+    { name: "Todas las provincias", file:"ecuador.geojson"},
     { name: "Azuay", file:"azuay.geojson"},
     { name: "Bolivar", file:"bolivar.geojson"},
     { name: "Cañar", file:"canar.geojson"},
@@ -34,6 +35,7 @@ const loc_url = `${server}/static/historical_validation_tool_ecuador/geojson/loc
 
 // River basin districts
 let basin = [
+    { name: "Todas las demarcaciones", file:"ecuador.geojson"},
     { name: "Demarcación Esmeraldas", file:"esmeraldas.geojson"},
     { name: "Demarcación Guayas", file:"guayas.geojson"},
     { name: "Demarcación Jubones", file:"jubones.geojson"},
@@ -137,7 +139,7 @@ info.addTo(map);
 // Select box for ZOOM to localities (Provincias)
 $('#select-loc').selectize({
     create: false,
-    sortField: { field: 'text', direction: 'asc'},
+    //sortField: { field: 'text', direction: 'asc'},
     onChange: function(value, isOnInitialize) {
         // Retrieve geojson from REST API
         fetch(`${loc_url}${value}`)
@@ -148,7 +150,11 @@ $('#select-loc').selectize({
                 map.removeLayer(layerSHP)
             }
             // Add retrieved layer and fit to map
-            layerSHP = L.geoJSON(layer, { style: { weight: 1 } }).addTo(map);
+            if(value === "ecuador.geojson"){
+                layerSHP = L.geoJSON(layer, { style:  {weight: 2, fillOpacity: 0} }).addTo(map);
+            }else{
+                layerSHP = L.geoJSON(layer, { style: { weight: 1 } }).addTo(map);
+            }
             map.fitBounds(layerSHP.getBounds());
         });
     }
@@ -158,7 +164,7 @@ $('#select-loc').selectize({
 // Select box for ZOOM to to basin district
 $('#select-basin').selectize({
     create: true,
-    sortField: { field: 'text', direction: 'asc'},
+    //sortField: { field: 'text', direction: 'asc'},
     onChange: function(value, isOnInitialize) {
         // Retrieve geojson from REST API
         fetch(`${basin_url}${value}`)
@@ -169,7 +175,11 @@ $('#select-basin').selectize({
                 map.removeLayer(layerSHP)
             }
             // Add retrieved layer and fit to map
-            layerSHP = L.geoJSON(layer, { style: { weight: 1 } }).addTo(map);
+            if(value === "ecuador.geojson"){
+                layerSHP = L.geoJSON(layer, { style:  {weight: 2, fillOpacity: 0} }).addTo(map);
+            }else{
+                layerSHP = L.geoJSON(layer, { style: { weight: 1 } }).addTo(map);
+            }
             map.fitBounds(layerSHP.getBounds());
         });
     }
